@@ -7,6 +7,7 @@
 'use strict';
 
 // import dependencies
+
 const bodyParser = require('body-parser'),
       express = require('express'),
       app = express();
@@ -16,14 +17,20 @@ const sendQuickReply = require('./utils/quick-reply'),
       HandoverProtocol = require('./utils/handover-protocol');
 
 const TOKEN = "webhookAunjai1";
-
+app.set('port', process.env.PORT || 3000);
 // webhook setup
-app.listen( 1337, () => console.log('webhook is listening'));
+https.createServer(options, app).listen(app.get('port'), () => {
+    console.log('Node app is running on port', app.get('port'));
+});
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 // webhook verification
+   
 app.get('/webhook', (req, res) => {
+    let mode = req.query['hub.mode'];
+    let token = req.query['hub.verify_token'];
+    let challenge = req.query['hub.challenge'];
   if (req.query['hub.verify_token'] === TOKEN) {
     res.send(req.query['hub.challenge']);
     res.status(200).send(challenge);
