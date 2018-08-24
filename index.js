@@ -7,7 +7,7 @@
 'use strict';
 
 // import dependencies
-
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const bodyParser = require('body-parser'),
       express = require('express'),
       app = express();
@@ -23,7 +23,7 @@ app.listen(app.get('port'), () => {
 });
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-
+pp.use(express.static('public'));
 // webhook verification
  module.exports = app;
 app.get('/webhook', (req, res) => {
