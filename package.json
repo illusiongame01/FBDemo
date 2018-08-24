@@ -4,12 +4,16 @@
   "description": "Handover Protocol to Page Inbox example",
   "main": "index.js",
   "author": "Tudor Săpunaru",
+   "scripts": {
+    "start": "node index.js"
+   }
   "contributors": [
     {
       "name": "Alex Muramoto",
       "url": "https://www.github.com/amuramoto"
     }
   ],
+  
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.17.1",
