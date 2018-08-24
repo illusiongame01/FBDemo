@@ -6,8 +6,35 @@
  */
 'use strict';
 
-// import dependencies
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+// Imports dependencies and set up http server
+const   request = require('request');
+var app = express();
+var _axios = require('axios');
+
+var _https = require('https');
+
+var _https2 = _interopRequireDefault(_https);
+
+var _axios2 = _interopRequireDefault(_axios);
+_axios2.default.defaults.timeout = 6000;
+
+_axios2.default.interceptors.request.use(function (config) {
+    config.requestTime = new Date().getTime();
+    return config;
+}, function (err) {
+    return Promise.reject(err);
+});
+
+_axios2.default.interceptors.response.use(function (res) {
+   // logger.logService({}, res.config, res, res.request.connection);
+    return res;
+}, function (err) {
+    //logger.logService(err, err.config, {}, err.request.connection);
+    return Promise.reject(err);
+});
+
+
 const bodyParser = require('body-parser'),
       express = require('express'),
       app = express();
