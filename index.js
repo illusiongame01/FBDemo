@@ -9,7 +9,7 @@
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 // Imports dependencies and set up http server
 const   request = require('request');
-var app = express();
+
 var _axios = require('axios');
 
 var _https = require('https');
