@@ -48,6 +48,7 @@ const TOKEN = "webhookAunjai1";
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.static('public'));
+app.listen(1337, () => console.log('webhook is listening'));
 // webhook verification
  module.exports = app;
 app.get('/webhook', (req, res) => {
