@@ -14,7 +14,7 @@ const bodyParser = require('body-parser'),
 // import helper libs
 const sendQuickReply = require('./utils/quick-reply'),
       HandoverProtocol = require('./utils/handover-protocol'),
-      env = require('./env');
+      env = require('env');
 
 // webhook setup
 app.listen(process.env.PORT || env.PORT || 1337, () => console.log('webhook is listening'));
