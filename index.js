@@ -13,17 +13,18 @@ const bodyParser = require('body-parser'),
 
 // import helper libs
 const sendQuickReply = require('./utils/quick-reply'),
-      HandoverProtocol = require('./utils/handover-protocol'),
-      env = require('./env');
+      HandoverProtocol = require('./utils/handover-protocol');
+
+const TOKEN = "webhookAunjai2";
 
 // webhook setup
-app.listen(process.env.PORT || env.PORT || 1337, () => console.log('webhook is listening'));
+app.listen( 1337, () => console.log('webhook is listening'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 // webhook verification
 app.get('/webhook', (req, res) => {
-  if (req.query['hub.verify_token'] === env.VERIFY_TOKEN) {
+  if (req.query['hub.verify_token'] === TOKEN) {
     res.send(req.query['hub.challenge']);
   }
 });
