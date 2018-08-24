@@ -42,7 +42,7 @@ const sendQuickReply = require('./utils/quick-reply'),
 
 const TOKEN = "webhookAunjai1";
 
-app.listen(1337, () => console.log('webhook is listening'));
+app.listen(3000, () => console.log('webhook is listening'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.static('public'));
