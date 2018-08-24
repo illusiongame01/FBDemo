@@ -78,7 +78,7 @@ app.post('/webhook', (req, res) => {
     
       const psid = event.sender.id;
       const message = event.message;
-
+      console.log(message);
       if (message && message.quick_reply && message.quick_reply.payload == 'take_from_inbox') {
         // quick reply to take from Page inbox was clicked          
         text = 'The Primary Receiver is taking control back. \n\n Tap "Pass to Inbox" to pass thread control to the Page Inbox.';
@@ -94,13 +94,13 @@ app.post('/webhook', (req, res) => {
 
   // Bot is in control - listen for messages 
   if (webhook_events.messaging) {
-    
+   
     // iterate webhook events
     webhook_events.messaging.forEach(event => {      
       // parse sender PSID and message
       const psid = event.sender.id;
       const message = event.message;
-
+      console.log(message + ' pass_to_inbox');
       if (message && message.quick_reply && message.quick_reply.payload == 'pass_to_inbox') {
         
         // quick reply to pass to Page inbox was clicked
@@ -113,7 +113,7 @@ app.post('/webhook', (req, res) => {
         HandoverProtocol.passThreadControl(psid, page_inbox_app_id);
         
       } else if (event.pass_thread_control) {
-        
+         console.log(message + ' pass_thread_control');
         // thread control was passed back to bot manually in Page inbox
         text = 'You passed control back to the Primary Receiver by marking "Done" in the Page Inbox. \n\n Tap "Pass to Inbox" to pass control to the Page Inbox.';
         title = 'Pass to Inbox';
@@ -122,7 +122,7 @@ app.post('/webhook', (req, res) => {
         sendQuickReply(psid, text, title, payload);
 
       } else if (message && !message.is_echo) {      
-        
+         console.log(message + ' is_echo');
         // default
         text = 'Welcome! The bot is currently in control. \n\n Tap "Pass to Inbox" to pass control to the Page Inbox.';
         title = 'Pass to Inbox';
