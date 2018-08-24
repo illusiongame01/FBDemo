@@ -5,11 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 'use strict';
-const env = require('./env'),
-      request = require('request');
+const   request = require('request');
 
 function call (path, payload, callback) {
-  const access_token = process.env.PAGE_ACCESS_TOKEN || env.PAGE_ACCESS_TOKEN;
+  const access_token = "EAAOZBpi8ijK8BAELwiP402sLfM64gzPI1wYvQwgW1IfHRRRisZA22rcuEXerBCRUZAYPTDMNkuushI14gVeFKIMdrMvSWfDGdI6x7cwSWwOSLOZCve72fOlB2SG6HImJZCXoYAWsEwuASWGSGtNfEBKST7ROzlu7BzRvgfLy0uAZDZD"
   const graph_url = 'https://graph.facebook.com/me';
 
   if (!path) {
