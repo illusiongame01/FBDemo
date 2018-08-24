@@ -42,13 +42,18 @@ const sendQuickReply = require('./utils/quick-reply'),
 
 
 
-app.listen(3000, () => console.log('webhook is listening'));
+app.set('port', 5000);
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-// webhook verification
+app.listen(app.get('port'), () => {
+    console.log('Node app is running on port', app.get('port'));
+});
+
  module.exports = app;
+// webhook verification
+
 app.get('/webhook', (req, res) => {
     let mode = req.query['hub.mode'];
     let token = req.query['hub.verify_token'];
