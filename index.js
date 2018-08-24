@@ -15,7 +15,7 @@ const bodyParser = require('body-parser'),
 const sendQuickReply = require('./utils/quick-reply'),
       HandoverProtocol = require('./utils/handover-protocol');
 
-const TOKEN = "webhookAunjai2";
+const TOKEN = "webhookAunjai1";
 
 // webhook setup
 app.listen( 1337, () => console.log('webhook is listening'));
