@@ -23,7 +23,7 @@ app.listen(app.get('port'), () => {
 });
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-pp.use(express.static('public'));
+app.use(express.static('public'));
 // webhook verification
  module.exports = app;
 app.get('/webhook', (req, res) => {
