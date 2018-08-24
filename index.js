@@ -18,8 +18,7 @@ const sendQuickReply = require('./utils/quick-reply'),
 
 const TOKEN = "webhookAunjai1";
 app.set('port', process.env.PORT || 3000);
-// webhook setup
-https.createServer(options, app).listen(app.get('port'), () => {
+app.listen(app.get('port'), () => {
     console.log('Node app is running on port', app.get('port'));
 });
 app.use(bodyParser.urlencoded({extended: false}));
