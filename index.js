@@ -36,8 +36,7 @@ _axios2.default.interceptors.response.use(function (res) {
 
 
 const bodyParser = require('body-parser'),
-      express = require('express'),
-      app = express();
+      express = require('express');
 
 // import helper libs
 const sendQuickReply = require('./utils/quick-reply'),
