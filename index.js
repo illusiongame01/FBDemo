@@ -43,8 +43,8 @@ const sendQuickReply = require('./utils/quick-reply'),
       HandoverProtocol = require('./utils/handover-protocol');
 
 const TOKEN = "webhookAunjai1";
-app.set('port', process.env.PORT || 3000);
-app.listen(app.get('port'), () => {
+
+app.listen(3000, () => {
     console.log('Node app is running on port', app.get('port'));
 });
 app.use(bodyParser.urlencoded({extended: false}));
