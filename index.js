@@ -13,7 +13,9 @@ const   request = require('request');
 var _axios = require('axios');
 
 var _https = require('https');
-
+const bodyParser = require('body-parser'),
+      express = require('express'),
+      app = express();
 var _https2 = _interopRequireDefault(_https);
 
 var _axios2 = _interopRequireDefault(_axios);
@@ -34,21 +36,17 @@ _axios2.default.interceptors.response.use(function (res) {
     return Promise.reject(err);
 });
 
-
-const bodyParser = require('body-parser'),
-      express = require('express');
-
 // import helper libs
 const sendQuickReply = require('./utils/quick-reply'),
       HandoverProtocol = require('./utils/handover-protocol');
 
 const TOKEN = "webhookAunjai1";
 
-
+app.listen(1337, () => console.log('webhook is listening'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.static('public'));
-app.listen(1337, () => console.log('webhook is listening'));
+
 // webhook verification
  module.exports = app;
 app.get('/webhook', (req, res) => {
