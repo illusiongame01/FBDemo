@@ -26,6 +26,7 @@ app.use(bodyParser.json());
 app.get('/webhook', (req, res) => {
   if (req.query['hub.verify_token'] === TOKEN) {
     res.send(req.query['hub.challenge']);
+    res.status(200).send(challenge);
   }
 });
 
