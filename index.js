@@ -40,7 +40,7 @@ _axios2.default.interceptors.response.use(function (res) {
 const sendQuickReply = require('./utils/quick-reply'),
       HandoverProtocol = require('./utils/handover-protocol');
 
-const TOKEN = "webhookAunjai1";
+
 
 app.listen(3000, () => console.log('webhook is listening'));
 app.use(bodyParser.urlencoded({extended: false}));
@@ -53,7 +53,8 @@ app.get('/webhook', (req, res) => {
     let mode = req.query['hub.mode'];
     let token = req.query['hub.verify_token'];
     let challenge = req.query['hub.challenge'];
-  if (req.query['hub.verify_token'] === TOKEN) {
+      console.log('webhook');
+  if (req.query['hub.verify_token'] === "webhookAunjai1") {
     res.send(req.query['hub.challenge']);
     res.status(200).send(challenge);
   }
