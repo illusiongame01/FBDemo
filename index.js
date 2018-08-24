@@ -44,9 +44,7 @@ const sendQuickReply = require('./utils/quick-reply'),
 
 const TOKEN = "webhookAunjai1";
 
-app.listen(3000, () => {
-    console.log('Node app is running on port', app.get('port'));
-});
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.static('public'));
