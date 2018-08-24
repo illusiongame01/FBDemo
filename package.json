@@ -6,7 +6,7 @@
   "author": "Tudor Săpunaru",
    "scripts": {
     "start": "node index.js"
-   }
+   },
   "contributors": [
     {
       "name": "Alex Muramoto",
