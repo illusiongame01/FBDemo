@@ -2,10 +2,10 @@
   "name": "hop2inbox_bot",
   "version": "0.0.1",
   "description": "Handover Protocol to Page Inbox example",
-  "main": "index.js",
+  "main": "app.js",
   "author": "Tudor Săpunaru",
    "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
    },
   "contributors": [
     {
