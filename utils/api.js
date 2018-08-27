@@ -8,7 +8,7 @@
 const   request = require('request');
 
 function call (path, payload, callback) {
-  const access_token = 'EAAOZBpi8ijK8BAELwiP402sLfM64gzPI1wYvQwgW1IfHRRRisZA22rcuEXerBCRUZAYPTDMNkuushI14gVeFKIMdrMvSWfDGdI6x7cwSWwOSLOZCve72fOlB2SG6HImJZCXoYAWsEwuASWGSGtNfEBKST7ROzlu7BzRvgfLy0uAZDZD';
+  var access_token = 'EAAOZBpi8ijK8BAELwiP402sLfM64gzPI1wYvQwgW1IfHRRRisZA22rcuEXerBCRUZAYPTDMNkuushI14gVeFKIMdrMvSWfDGdI6x7cwSWwOSLOZCve72fOlB2SG6HImJZCXoYAWsEwuASWGSGtNfEBKST7ROzlu7BzRvgfLy0uAZDZD';
   const graph_url = 'https://graph.facebook.com/me';
 
   if (!path) {
