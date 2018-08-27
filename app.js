@@ -25,17 +25,8 @@ const
 
 var app = express();
 
-const https = require('https');
+const http = require('http');
 const fs = require('fs');
-
-
-const options = {
-  key: fs.readFileSync('/app/cert/dev-ass-cert2018/dev-askaunjai.key'),
-  cert: fs.readFileSync('/app/cert/dev-ass-cert2018/dev-askaunjai.ais.co.th.crt'),
-  ca: fs.readFileSync('/app/cert/dev-ass-cert2018/GlobalSignOrganizationValidationCA-SHA256-G2.crt')
-};
-
-
 
 
 app.set('port', process.env.PORT || 3000);
@@ -56,7 +47,7 @@ const APP_SECRET = process.env.APP_SECRET;
   res.end('hello world\n');
 }).listen(3000);*/
 
-https.createServer(options, app).listen(app.get('port'), () => {
+app.listen(app.get('port'), () => {
     console.log('Node app is running on port', app.get('port'));
 });
 
