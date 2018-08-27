@@ -69,7 +69,7 @@ app.post('/webhook', (req, res) => {
 
   // initialize quick reply properties
   let text, title, payload;
-
+   console.log('webhook_events.standby:'+webhook_events.standby);
   // Secondary Receiver is in control - listen on standby channel
   if (webhook_events.standby) {
     
@@ -91,7 +91,7 @@ app.post('/webhook', (req, res) => {
 
     });   
   }
-
+   console.log('webhook_events.messaging:'+webhook_events.messaging);
   // Bot is in control - listen for messages 
   if (webhook_events.messaging) {
    
